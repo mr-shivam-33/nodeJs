@@ -1,0 +1,438 @@
+// ------------
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+@import "@styles/pages/dashboard/dashboard-global-style.scss";
+@import "@styles/pages/dashboard/dashboard-tbl-style.scss";
+@import "@styles/pages/dashboard/dashboard-form-style.scss";
+@import "@styles/pages/dashboard/dashboard-ant-style.scss";
+// --------------
+.dashboardLayout {
+  background: $colorPrimaryLight;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  font-family: $fontFamily;
+  font-size: $fontSize16;
+  font-weight: 400;
+  line-height: $lineHeight;
+  .dashboardMainWrapper {
+    flex-grow: 1;
+    overflow: auto;
+    .dashboardPageTitleRow {
+      padding: 5px 0px;
+      margin: 0 0 0 0;
+      h1 {
+        font-size: $fontSize24;
+        font-weight: 600;
+        color: $colorPrimary;
+        text-transform: uppercase;
+      }
+    }
+    .dashboardMainContent {
+      padding: 10px 20px 20px;
+      min-height: calc(100vh - 156px);
+      .dashboardContentGrid {
+        background: $colorWhite;
+        box-shadow: $dashboardBoxShadow;
+        padding: $dashboardBoxPadding;
+        border-radius: $wrapperBorderRadius;
+        border: 1px solid $dashboardBorderColor;
+      }
+      .dashboardContentInnerGrid {
+        background: $colorWhite;
+        padding: $dashboardBoxPadding;
+        border-radius: $wrapperBorderRadius;
+        border: 1px solid $dashboardBorderColorControl;
+      }
+      .dashboardGridBorderNone {
+        border: none;
+      }
+      .breadcrumbStyle {
+        margin-bottom: 30px;
+        li {
+          display: flex;
+          align-items: center;
+          .backBtn {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+        }
+      }
+      .userInfoWrapper {
+        display: flex;
+        gap: 20px;
+        border-radius: 8px 8px 0 0 !important;
+        .profileUserImgGrid {
+          width: 160px;
+          height: 160px;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 0 5px 1px rgb(88 88 88 / 15%);
+          padding: 15px;
+          img {
+            object-fit: contain;
+          }
+        }
+        .profileUserInfo {
+          display: grid;
+          align-items: center;
+          .profileInnerGrid {
+            display: grid;
+            gap: 10px;
+            .userName {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: $fontSize20;
+              font-weight: 600;
+              color: $colorBlack;
+              .verifyIcon {
+                color: green;
+              }
+            }
+            .userDetail {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+              }
+            }
+            .userTaskWrapper {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              margin-top: 15px;
+              .userTaskGrid {
+                border: 1px dashed $dashboardBorderColorControl;
+                padding: 5px 15px;
+                .userTaskCountGrid {
+                  font-size: $fontSize24;
+                  font-weight: 600;
+                  color: $colorBlack;
+                  line-height: normal;
+                }
+                .userTaskLabel {
+                  line-height: normal;
+                }
+              }
+            }
+          }
+        }
+      }
+      .profileInfoTabs {
+        .profileInfoTabsWrapper {
+          display: flex;
+          gap: 15px;
+        }
+      }
+      .profileWrapper {
+        display: grid;
+        grid-template-columns: 360px auto;
+        gap: 30px;
+        padding-top: 30px;
+        .profileLeftSection {
+          .profileLeftSectionInner {
+            position: sticky;
+            top: calc(66px + 30px);
+            display: grid;
+            gap: 30px;
+          }
+        }
+        .profileRightSection {
+          .profileRightSectionInner {
+            display: grid;
+            gap: 30px;
+          }
+        }
+      }
+      .userInfoContainer {
+        .userInfoBox {
+          display: grid;
+          gap: 30px;
+          h4 {
+            font-size: $fontSize14;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+          ul {
+            display: grid;
+            gap: 10px;
+            li {
+              display: flex;
+              .listLable {
+                min-width: 140px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                span.labelIcon {
+                  width: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .userNftReport {
+        h3 {
+          margin-bottom: 10px;
+        }
+      }
+      .companyProfile {
+        h3 {
+          margin-bottom: 15px;
+          color: $colorSecondary;
+        }
+        hr {
+          margin-top: 30px;
+          margin-bottom: 25px;
+        }
+        .documentsRow {
+          display: grid;
+          gap: 10px;
+          .documentsRowWrapper {
+            display: grid;
+            grid-template-columns: 150px 150px 150px 150px;
+            gap: 30px;
+            align-items: center;
+            .ant-select {
+              .ant-select-selector {
+                padding: 0px 11px;
+              }
+            }
+          }
+        }
+        .dashboardAddressRow {
+          .dashboardAddressRowWrapper {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            .dashboardAddressWrapper {
+              display: flex;
+              gap: 30px;
+              .dashboardAddressGrid {
+                background: $colorWhite;
+                padding: 15px 20px;
+                border: 1px dashed $dashboardBorderColorControl;
+                border-radius: $borderRadius;
+                h4 {
+                  color: $colorPrimary;
+                  margin-bottom: 15px;
+                }
+                h5 {
+                  color: $colorBlack;
+                  margin-bottom: 5px;
+                }
+              }
+            }
+          }
+        }
+        .bankInfoGrid {
+          display: grid;
+          gap: 6px;
+          li {
+            display: flex;
+            span.itemLabel {
+              font-weight: 500;
+              color: $colorBlack;
+              width: 120px;
+            }
+            span.itemValue {
+              padding-left: 15px;
+            }
+          }
+        }
+      }
+      .companyUser {
+      }
+      .companyInfoWrapper {
+        display: flex;
+        gap: 20px;
+        border-radius: 8px 8px 0 0 !important;
+        .profileCompanyImgGrid {
+          width: 160px;
+          height: 160px;
+          border-radius: 5px;
+          overflow: hidden;
+          box-shadow: 0 0 5px 1px rgb(88 88 88 / 15%);
+          padding: 15px;
+          img {
+            object-fit: contain;
+          }
+        }
+        .profileCompanyInfo {
+          display: grid;
+          align-items: center;
+          .profileInnerGrid {
+            display: grid;
+            gap: 10px;
+            .companyName {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: $fontSize20;
+              font-weight: 600;
+              color: $colorBlack;
+              .verifyIcon {
+                color: green;
+              }
+            }
+            .companyDetail {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+              }
+            }
+            .companyTaskWrapper {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              margin-top: 15px;
+              .companyTaskGrid {
+                border: 1px dashed $dashboardBorderColorControl;
+                padding: 5px 15px;
+                .companyTaskCountGrid {
+                  font-size: $fontSize24;
+                  font-weight: 600;
+                  color: $colorBlack;
+                  line-height: normal;
+                }
+                .companyTaskLabel {
+                  line-height: normal;
+                }
+              }
+            }
+          }
+        }
+        .profileCompanyRightGrid {
+          display: flex;
+          margin-left: auto;
+          .companyInfoBox {
+            display: flex;
+            gap: 60px;
+            h4 {
+              font-size: $fontSize14;
+              font-weight: 600;
+              margin-bottom: 10px;
+            }
+            ul {
+              display: grid;
+              gap: 10px;
+              li {
+                display: flex;
+                .listLable {
+                  min-width: 130px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  span.labelIcon {
+                    width: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .companyAdminWrapper {
+        display: grid;
+        grid-template-columns: 320px auto;
+        gap: 30px;
+        .companyLeftPanel {
+          .companyLeftPanelWrapper {
+            display: grid;
+            gap: 30px;
+          }
+        }
+        .companyRightPanel {
+          display: grid;
+          gap: 30px;
+        }
+      }
+    }
+    .addPropertyGrid {
+      display: flex;
+    }
+    .fieldTypeGrid {
+      display: flex;
+    }
+  }
+  .clientDashboard {
+    display: grid;
+    grid-template-columns: 50px auto;
+    .clientDashboardMenu {
+      background: $colorPrimary;
+      padding: 15px 15px;
+      ul.clientDashboardMenuList {
+        color: $colorWhite;
+        display: grid;
+        gap: 5px;
+        li {
+          text-align: center;
+          a {
+            color: $colorWhite;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .clientDashboardMain {
+      background: $colorWhite;
+      padding: 30px;
+    }
+  }
+  // ====================
+  .columnCount {
+    column-count: 3;
+    column-gap: 30px;
+    column-rule: 1px solid $dashboardBorderColorControl;
+    h3 {
+      column-span: all;
+      margin-bottom: 10px;
+    }
+  }
+  .user-dropdown {
+    padding: 10px 5px 15px;
+    font-size: $fontSize13;
+    .ant-dropdown-menu-item-group-list {
+      margin: 0 0;
+    }
+    .ant-dropdown-menu-item,
+    .ant-dropdown-menu-submenu-title {
+      color: $colorText;
+    }
+  }
+  .dashboardFormFullHeight {
+    // height: calc(100vh - 200px);
+    // overflow-x: auto;
+  }
+  .dashboardBackBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: $colorSecondary;
+    cursor: pointer;
+  }
+  // ====================
+  .cursorPointer {
+    cursor: pointer;
+  }
+  .radius10 {
+    border-radius: 10px;
+  }
+  .radius20 {
+    border-radius: 20px;
+  }
+  .radius30 {
+    border-radius: 30px;
+  }
+  // ====================
+}

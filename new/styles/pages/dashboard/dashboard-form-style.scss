@@ -1,0 +1,326 @@
+@import "/styles/pages/dashboard/mixins/btn-input-style";
+// =======================
+.dashboardLayout {
+  font-size: $fontSize16;
+  // min-width: 520px;
+  display: inline-block;
+  input,
+  textarea,
+  .ant-select,
+  .ant-picker,
+  .ant-input-search,
+  .ant-input-affix-wrapper {
+    @include mixBtnInputStyle;
+    max-width: 520px;
+    font-family: $fontFamily;
+  }
+  textarea.ant-input {
+    height: auto;
+  }
+  .ant-input-affix-wrapper {
+    input {
+      height: auto;
+    }
+  }
+  .ant-select {
+    padding: 0 0;
+    .ant-select-selector {
+      @include mixBtnInputStyle;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .uploadImgWrapper {
+    .ant-upload-list {
+      display: flex;
+    }
+  }
+  .ant-upload.ant-upload-select {
+    display: block;
+    .ant-btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+  // --------------------
+  .ant-btn,
+  a.ant-btn {
+    @include mixBtnInputStyle;
+    min-width: 90px;
+    font-family: $fontFamily;
+    span {
+      margin-inline-start: 0px;
+    }
+  }
+  .ant-input-search
+    > .ant-input-group
+    > .ant-input-group-addon:last-child
+    .ant-input-search-button {
+    @include mixBtnInputStyle;
+    padding: 0 0 0 0;
+  }
+  .dashboardBtn {
+    @include mixBtnInputStyle;
+  }
+  .dashboardBtnLink {
+    @include mixBtnInputStyle;
+    border: 1px solid $dashboardBorderColorControl;
+  }
+  .btnPrimary,
+  .linkBtnPrimary {
+    @include mixBtnInputStyle;
+    background: $colorPrimary;
+    border: 1px solid $colorPrimary;
+    color: $colorWhite;
+    &:hover {
+      background: $colorWhite;
+      color: $colorPrimary;
+      border: 1px solid $colorPrimary;
+    }
+  }
+  .btnEdit {
+    display: flex;
+    align-items: center;
+  }
+  .btnDefault,
+  .linkBtnDefault {
+    @include mixBtnInputStyle;
+    background: $colorWhite;
+    border: 1px solid $dashboardBorderColorControl;
+    color: $colorText;
+    &:hover {
+      color: $colorLinkBlue;
+      border: 1px solid $colorLinkBlue;
+    }
+  }
+  .btnSecondary,
+  .linkBtnSecondary {
+    @include mixBtnInputStyle;
+    background: $colorSecondary;
+    border: 1px solid $colorSecondary;
+    color: $colorWhite;
+    &:hover {
+      background: $colorWhite;
+      color: $colorSecondary;
+      border: 1px solid $colorSecondary;
+    }
+  }
+  .anrLink {
+    color: $colorText;
+    &:hover {
+      color: $colorPrimary;
+    }
+  }
+  .anrLinkUnderLine {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .anrLinkPrimary {
+    color: $colorPrimary;
+  }
+  .anrLinkSecondary {
+    color: $colorSecondary;
+  }
+  .checkboxBtn {
+    .ant-checkbox {
+      top: 0;
+      .ant-checkbox-inner {
+        @include mixBtnInputStyle;
+        width: 44px;
+        min-width: initial;
+        padding: 0 0 0 0;
+        &::after {
+          top: 45%;
+          left: 36%;
+          width: 8px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  // --------------------
+  .addItemBtn {
+    border: 1px dashed $colorSecondary;
+    color: $colorSecondary;
+    padding: 15px 25px;
+    display: grid;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+    .anticon {
+      font-size: 28px;
+    }
+  }
+  .ant-switch-checked {
+    background: $colorPrimary;
+  }
+  // =======================
+  .row > * {
+    // margin-top: 15px;
+  }
+  .formRow {
+    display: grid;
+    row-gap: 20px;
+    column-gap: 80px;
+  }
+  .formRowOneCol {
+    grid-template-columns: 1fr;
+  }
+  .formRowTwoCol {
+    grid-template-columns: 1fr 1fr;
+    min-width: 1100px;
+  }
+  .formUseQrRow {
+    display: grid;
+    grid-template-columns: 460px auto;
+    gap: 15px;
+    align-items: center;
+    .qrBtnGrid {
+      width: 120px;
+    }
+  }
+  .formOneRowGrid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .form-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: $colorText;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .form-sugg {
+    font-size: 14px;
+    color: $colorSubText;
+    margin-top: 0.5rem;
+  }
+  .formSubHeading {
+    font-size: 22px;
+    font-weight: 600 !important;
+    margin-bottom: 15px;
+  }
+  .btnRowWrapper {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  .dashboardInputFile {
+    .ant-btn {
+      max-width: 300px;
+      padding: 8px 85px;
+      justify-content: center;
+    }
+  }
+  // =======================
+}
+.userRightsForm {
+  min-width: 1000px;
+  .row {
+    gap: 10px;
+  }
+}
+// ============ responsive ============
+@media (max-width: 1600px) {
+  // -------------------------
+  @mixin mixBtnInputStyle {
+    height: 30px;
+    max-width: 300px;
+    padding: 3px 6px;
+    font-size: $fontSize12;
+    border-radius: 4px;
+  }
+  // ------------------------
+  .dashboardLayout {
+    .formRow {
+      row-gap: 10px;
+      column-gap: 30px;
+    }
+    .formRowTwoCol {
+      min-width: auto;
+    }
+    .form-label {
+      font-size: $fontSize13;
+      margin-bottom: 2px;
+    }
+    .form-sugg {
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .formUseQrRow {
+      grid-template-columns: 300px auto;
+    }
+    input,
+    textarea,
+    .ant-select,
+    .ant-picker,
+    .ant-input-search,
+    .ant-input-affix-wrapper {
+      @include mixBtnInputStyle;
+    }
+    .ant-input-affix-wrapper {
+      padding: 3px 6px;
+      .ant-input {
+        padding: 0 6px;
+      }
+    }
+    .ant-select {
+      padding: 0 0;
+      .ant-select-selector {
+        @include mixBtnInputStyle;
+      }
+    }
+
+    .ant-btn,
+    a.ant-btn {
+      @include mixBtnInputStyle;
+    }
+    .checkboxBtn {
+      .ant-checkbox {
+        .ant-checkbox-inner {
+          @include mixBtnInputStyle;
+          width: 30px;
+          &::after {
+            top: 46%;
+            left: 32%;
+            width: 7px;
+            height: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1440px) {
+  .dashboardLayout {
+    .userRightsForm {
+      min-width: auto;
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .dashboardLayout {
+    .formUseQrRow {
+      grid-template-columns: 240px auto;
+      gap: 10px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .dashboardLayout .formRowTwoCol {
+    min-width: auto;
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboardLayout {
+    .formUseQrRow {
+      grid-template-columns: auto;
+      gap: 3px;
+    }
+  }
+}

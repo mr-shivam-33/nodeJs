@@ -1,0 +1,185 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+// --------------------
+$colorNavBorder: #737eed;
+// --------------------
+.dashboardNavbarMenu {
+  // ------------------------
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  color: $colorText;
+  z-index: 2;
+  background: $colorPrimary;
+  display: flex;
+  width: 295px;
+  transition: width 0.4s ease;
+  z-index: 9;
+  &.dashboardNavbarMenuToggle {
+    width: $toggleMobileNavBarWidth;
+    .dashboardtoggleMenuBtn {
+      transform: rotate(180deg);
+    }
+  }
+  .dashboardtoggleMenuBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    background: $colorPrimaryLight;
+    box-shadow: 0 0 4px 1px #a8b1ff;
+    position: absolute;
+    top: 20px;
+    right: -13px;
+    color: $colorPrimary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .iconviewCol {
+    box-shadow: $dashboardBoxShadow;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    .dashboardBrandLogo {
+      text-align: center;
+      padding: 50px 5px 20px;
+      img {
+        max-height: 85px;
+      }
+    }
+    ul.menuList {
+      display: grid;
+      overflow: hidden;
+      min-width: 250px;
+      width: 100%;
+      li {
+        &:hover,
+        &.active {
+          background: $colorPrimary;
+          background: #5f6cec;
+        }
+        &.active {
+          .listArrowIcon {
+            transform: rotate(90deg);
+          }
+        }
+        .listItem {
+          min-height: 35px;
+          min-width: 35px;
+          color: $colorWhite;
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          padding: 25px 10px 25px 0;
+          position: relative;
+          border-bottom: 1px solid $colorNavBorder;
+          .listItemIcon {
+            font-size: $fontSize18;
+            width: $toggleMobileNavBarWidth;
+            text-align: center;
+          }
+          .navLabel {
+            font-size: inherit;
+          }
+          .listArrowIcon {
+          }
+          .msAuto {
+            margin-left: auto;
+          }
+        }
+        .subNavList {
+          display: grid;
+          gap: 8px;
+          padding-left: 60px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          font-size: 14px;
+          transition: all 0.5s ease;
+          li {
+            a {
+              display: flex;
+              gap: 10px;
+              color: $colorWhite;
+              .subMenuIcon {
+                margin-top: 3px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.dashboardNavScrollbar {
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-track:hover {
+        background: $colorGray;
+      }
+      &::-webkit-scrollbar {
+        background: transparent;
+        width: 5px;
+        height: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $colorWhite;
+        border-radius: 15px;
+        width: 3px;
+      }
+      &::-webkit-scrollbar-button {
+        background: $colorWhite;
+      }
+    }
+  }
+  .expandArrow {
+    transform: rotate(90deg);
+  }
+}
+// ============ responsive ============
+@media (max-width: 1600px) {
+  .dashboardNavbarMenu {
+    width: 250px;
+    .iconviewCol {
+      ul.menuList {
+        li {
+          .listItem {
+            padding: 20px 10px 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardNavbarMenu {
+    width: $toggleMobileNavBarWidth;
+    position: fixed;
+    &.dashboardNavbarMenuToggle {
+      width: 250px;
+      .dashboardtoggleMenuBtn {
+        transform: rotate(0deg);
+      }
+    }
+    &:hover {
+      // position: absolute;
+      // width: 250px;
+    }
+    .dashboardtoggleMenuBtn {
+      display: none;
+      top: 15px;
+      width: 22px;
+      height: 22px;
+      transform: rotate(180deg);
+    }
+    .iconviewCol {
+      .dashboardBrandLogo {
+        padding: 40px 5px 10px;
+        img {
+          max-width: 35px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@mixin mixBtnInputStyle {
+  height: 44px;
+  padding: 5px 20px;
+  font-size: $fontSize16;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 6px;
+}

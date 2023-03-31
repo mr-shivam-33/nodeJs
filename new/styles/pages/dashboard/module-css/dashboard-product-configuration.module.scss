@@ -1,0 +1,213 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+@import "/styles/pages/dashboard/mixins/btn-input-style";
+// ----------------------
+@mixin btnTypeIconProConf {
+  color: $colorWhite;
+  border-radius: 4px;
+  padding: 2px 2px;
+}
+// =====================
+.productConfigurationForm {
+  .productConfigurationFormRow1 {
+    display: flex;
+    gap: 150px;
+    .productConfigurationFormRow1Col1 {
+      min-width: 450px;
+    }
+  }
+}
+.darkGradientBox {
+  background: linear-gradient(118.62deg, #7152d1 16%, #3e29a7 93.2%);
+  border-radius: $boxBorderRadius;
+  padding: 20px;
+  .darkGradientBoxGridWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    .darkGradientBoxGrid {
+      background: $colorWhite;
+      padding: 10px 15px;
+      border-radius: $borderRadius;
+    }
+  }
+}
+.lightBgBox {
+  background: $colorPrimaryLight;
+  padding: 15px;
+  border-radius: $wrapperBorderRadius;
+}
+.btnTypeGroup {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  .propertBtnGrid {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  label {
+    border-color: transparent;
+    @include mixBtnInputStyle;
+    &::before {
+      display: none !important;
+    }
+    &:nth-child(1) {
+      background: #fef7ea !important;
+      border: 2px solid #f1e0c4 !important;
+      border-color: #f1e0c4 !important;
+      color: #cb8b22 !important;
+      .btnIconGrid {
+        @include btnTypeIconProConf;
+        background: #cb8b22;
+      }
+      &:focus {
+        border: 1px solid #000000;
+      }
+    }
+    &:nth-child(2) {
+      background: #dcf4ff !important;
+      border: 2px solid #8bc1c5 !important;
+      border-color: #8bc1c5 !important;
+      color: #1eb3bc !important;
+      .btnIconGrid {
+        @include btnTypeIconProConf;
+        background: #1eb3bc;
+      }
+    }
+    &:nth-child(3) {
+      background: #fdf2ff !important;
+      border: 2px solid #d199df !important;
+      border-color: #d199df !important;
+      color: #9045a3 !important;
+      .btnIconGrid {
+        @include btnTypeIconProConf;
+        background: #9045a3;
+      }
+    }
+    &.ant-radio-button-wrapper-checked {
+      background: $colorPrimary;
+    }
+  }
+}
+.btnFieldDelte {
+  min-width: auto;
+  padding: 8px 15px;
+}
+
+// ===================================
+// =============================
+@media (max-width: 1600px) {
+  // ------------------------
+  @mixin mixBtnInputStyle {
+    height: 30px;
+    padding: 3px 6px;
+    font-size: $fontSize12;
+  }
+  // ------------------------
+  .productConfigurationForm {
+    .productConfigurationFormRow1 {
+      gap: 30px;
+      .productConfigurationFormRow1Col1 {
+        min-width: 390px;
+      }
+    }
+  }
+  .darkGradientBox {
+    border-radius: $boxBorderRadius;
+    padding: 10px;
+    .darkGradientBoxGridWrapper {
+      gap: 10px;
+      .darkGradientBoxGrid {
+        padding: 3px 6px;
+        border-radius: $borderRadius;
+      }
+    }
+  }
+  .btnTypeGroup {
+    label {
+      @include mixBtnInputStyle;
+      &:nth-child(1) {
+        color: #cb8b22 !important;
+        .btnIconGrid {
+          background: #cb8b22;
+        }
+        &:focus {
+          border: 1px solid #000000;
+        }
+      }
+      &:nth-child(2) {
+        background: #dcf4ff !important;
+        border: 2px solid #8bc1c5 !important;
+        border-color: #8bc1c5 !important;
+        color: #1eb3bc !important;
+        .btnIconGrid {
+          @include btnTypeIconProConf;
+          background: #1eb3bc;
+        }
+      }
+      &:nth-child(3) {
+        background: #fdf2ff !important;
+        border: 2px solid #d199df !important;
+        border-color: #d199df !important;
+        color: #9045a3 !important;
+        .btnIconGrid {
+          @include btnTypeIconProConf;
+          background: #9045a3;
+        }
+      }
+      &.ant-radio-button-wrapper-checked {
+        background: $colorPrimary;
+      }
+    }
+  }
+}
+@media (max-width: 1440px) {
+}
+@media (max-width: 1366px) {
+  .productConfigurationForm {
+    .productConfigurationFormRow1 {
+      gap: 20px;
+      .productConfigurationFormRow1Col1 {
+        min-width: 350px;
+      }
+    }
+  }
+}
+@media (max-width: 1080px) {
+  .productConfigurationForm {
+    .productConfigurationFormRow1 {
+      display: grid;
+      gap: 20px;
+      .productConfigurationFormRow1Col1 {
+        min-width: 350px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .darkGradientBox {
+    padding: 15px;
+    .darkGradientBoxGridWrapper {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+      .darkGradientBoxGrid {
+        background: $colorWhite;
+        padding: 6px 10px;
+      }
+    }
+  }
+  .lightBgBox {
+    $wrapperBorderRadius: 10px;
+    padding: 10px;
+    border-radius: $wrapperBorderRadius;
+  }
+  .productConfigurationForm {
+    .productConfigurationFormRow1 {
+      gap: 10px;
+      .productConfigurationFormRow1Col1 {
+        min-width: auto;
+      }
+    }
+  }
+}

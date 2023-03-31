@@ -1,0 +1,15 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+@import "/styles/pages/dashboard/mixins/btn-input-radius";
+@import "/styles/pages/dashboard/mixins/btn-input-style";
+// =====================
+.qrConfigurationGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+// ===================================
+// =============================
+@media (max-width: 1600px) {
+  
+}
+

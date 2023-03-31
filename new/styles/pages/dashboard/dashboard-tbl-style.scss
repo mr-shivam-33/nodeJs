@@ -1,0 +1,293 @@
+@import "/styles/pages/dashboard/mixins/btn-input-style";
+@import "/styles/pages/dashboard/mixins/tbl-btn-input-style";
+@import "/styles/pages/dashboard/mixins/tbl-td-tr-style";
+@import "/styles/pages/dashboard/mixins/tbl-tags-btn-style";
+@import "/styles/pages/dashboard/mixins/sec-scrollbar";
+// --------------------
+// ----------------
+.tblTitleRow {
+  display: flex;
+  gap: 15px;
+  .tblSearchBtn {
+    border-color: $dashboardBorderColor;
+    .ant-input-prefix {
+      font-size: 20px;
+    }
+    input {
+      font-size: $fontSize16;
+    }
+  }
+  .tblTitleBtn,
+  .ant-btn {
+    @include mixBtnInputStyle;
+    .mobHideTag {
+      padding-left: 5px;
+    }
+  }
+  a.ant-btn {
+    @include mixBtnInputStyle;
+  }
+  .layoutViewBtn {
+    min-width: 30px !important;
+    color: $colorPrimary;
+  }
+}
+.dashboardTbl {
+  .ant-table {
+    color: $colorText;
+    font-size: $fontSize16;
+    line-height: 22px;
+    font-family: $fontFamily;
+    .ant-table-title {
+      color: $colorPrimary;
+      font-weight: 600;
+      font-size: $fontSize16;
+      padding: 10px 0 40px;
+    }
+    .ant-table-container {
+      .ant-table-content {
+        @include mixSecScrollbar;
+      }
+    }
+    .ant-table-thead > tr > th,
+    .ant-table-tbody > tr > td,
+    .ant-table tfoot > tr > th,
+    .ant-table tfoot > tr > td {
+      @include dashboardTbltd;
+      .ant-empty-normal {
+        margin-block: 15px;
+      }
+      img {
+        max-height: 40px;
+      }
+    }
+    .ant-table-thead > tr > th {
+      background: $tHeadBgColor;
+      color: $colorPrimary;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      &:first-child {
+        border-radius: 10px 0 0 10px !important;
+      }
+      &:last-child {
+        border-radius: 0 10px 10px 0 !important;
+      }
+    }
+    a.ant-btn {
+      padding-top: 3px !important;
+      display: inline-flex;
+    }
+    .tblTitleRow {
+      display: flex;
+      gap: 15px;
+      .tblSearchBtn {
+        border-color: $dashboardBorderColor;
+        .ant-input-prefix {
+          font-size: 20px;
+        }
+        input {
+          font-size: $fontSize16;
+        }
+      }
+      .tblTitleBtn,
+      .ant-btn {
+        @include mixBtnInputStyle;
+        .mobHideTag {
+          padding-left: 5px;
+        }
+      }
+      a.ant-btn {
+        @include mixBtnInputStyle;
+      }
+    }
+    .linkBtnTblUser {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $colorPrimary;
+    }
+    .ant-tag {
+      @include mixTagStyle;
+    }
+    .ant-tag-default {
+      background: $colorGray;
+    }
+    .tblActionGrid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .tblActonIcons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .anticon {
+        color: $colorText;
+      }
+    }
+    .tblBtnGrid {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tblBtnAdd {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: $colorText;
+    }
+    .tblBtnAddPrimary {
+      border-color: $colorPrimary;
+      color: $colorPrimary;
+    }
+    .tblBtnAddSecondary {
+      border-color: $colorSecondary;
+      color: $colorSecondary;
+    }
+    .tblDateTimeGrid {
+      display: grid;
+      .date {
+      }
+      .time {
+        font-size: 13px;
+      }
+    }
+    .btnPrimary,
+    .linkBtnPrimary {
+      background: $colorPrimary;
+      border: 1px solid $colorPrimary;
+      color: $colorWhite;
+      &:hover {
+        background: $colorWhite;
+        color: $colorPrimary;
+        border: 1px solid $colorPrimary;
+      }
+    }
+    .btnSecondary,
+    .linkBtnSecondary {
+      background: $colorSecondary;
+      border: 1px solid $colorSecondary;
+      color: $colorWhite;
+      &:hover {
+        background: $colorWhite;
+        color: $colorSecondary;
+        border: 1px solid $colorSecondary;
+      }
+    }
+    .dashboardTblCheckMark {
+      font-size: 20px;
+    }
+  }
+  .ant-pagination {
+    margin: 15px 0 0;
+  }
+  .ant-checkbox-inner {
+    border: 1px solid $dashboardBorderColorControl;
+  }
+}
+// ============ responsive ============
+@media (max-width: 1600px) {
+  // ------------------
+  $borderRadius: 4px;
+  // ------------------
+  @mixin mixBtnInputStyle {
+    height: 30px;
+    max-width: 300px;
+    padding: 3px 6px;
+    font-size: $fontSize12;
+    border-radius: $borderRadius;
+  }
+  @mixin dashboardTbltd {
+    padding: 6px 6px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  // ------------------------
+  .tblTitleRow {
+    .tblSearchBtn {
+      border-color: $dashboardBorderColor;
+      .ant-input-prefix {
+        font-size: $fontSize14;
+      }
+      input {
+        font-size: $fontSize12;
+      }
+    }
+    .tblTitleBtn,
+    .ant-btn {
+      @include mixBtnInputStyle;
+    }
+    a.ant-btn {
+      @include mixBtnInputStyle;
+    }
+  }
+  .dashboardTbl {
+    .ant-table {
+      .ant-table-title {
+        font-size: $fontSize14;
+        padding: 10px 0 20px;
+      }
+      .tblTitleRow {
+        .tblSearchBtn {
+          border-color: $dashboardBorderColor;
+          .ant-input-prefix {
+            font-size: $fontSize14;
+          }
+          input {
+            font-size: $fontSize12;
+          }
+        }
+        .tblTitleBtn,
+        .ant-btn {
+          @include mixBtnInputStyle;
+        }
+        a.ant-btn {
+          @include mixBtnInputStyle;
+        }
+      }
+      .ant-table-thead > tr > th,
+      .ant-table-tbody > tr > td,
+      .ant-table tfoot > tr > th,
+      .ant-table tfoot > tr > td {
+        @include dashboardTbltd;
+        .ant-empty-normal {
+          margin-block: 15px;
+        }
+      }
+      .ant-table-thead > tr > th {
+        &:first-child {
+          border-radius: 4px 0 0 4px !important;
+        }
+        &:last-child {
+          border-radius: 0 4px 4px 0 !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .dashboardTbl {
+    .tblTitleRow {
+      .tblTitleBtn {
+        .mobHideTag {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .dashboardTbl {
+    .ant-table {
+      .tblTitleRow {
+        display: grid;
+        gap: 10px;
+        .ms-auto {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

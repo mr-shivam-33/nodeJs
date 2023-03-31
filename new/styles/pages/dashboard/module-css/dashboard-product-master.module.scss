@@ -1,0 +1,92 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+@import "/styles/pages/dashboard/mixins/btn-input-radius";
+@import "/styles/pages/dashboard/mixins/btn-input-style";
+// =====================
+.productMasterForm {
+    display: flex;  
+    gap: 20px;  
+    .packagingCriteriaGrid{
+      .packagingCriteriaGridHeader{
+        display: flex;
+        align-items: center;
+      }
+      .packageLevelGrid{
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        flex-wrap: wrap;
+        .packageLevelGridBox{
+          max-width: 130px;
+        }
+      }
+    }
+}
+.productGridViewContainer{ 
+  background: $colorPrimaryLight;
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  .productGridBox{
+    background: $colorWhite;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 60px auto;
+    gap: 10px;
+    align-items: center;
+    font-size: $fontSize12;
+    line-height: 15px;
+    .productGridBoxImg{
+      background: $colorPrimaryLight;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .productGridBoxInfo{
+      .productGridBoxInfoTitle{
+        font-size: $fontSize13;
+        color: $colorPrimary;
+        font-weight: 500;
+        border-bottom: 1px solid $dashboardBorderColor;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+      }
+      .productGridBoxInfoBox{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 5px;
+        row-gap: 10px;
+        .productGridBoxInfoBoxData{
+          .productGridBoxInfoBoxTag{
+            color: $colorPrimary;
+            font-weight: 500;
+            display: block;
+          }
+        }
+      }
+    }
+
+  }
+}
+// ===================================
+// =============================
+@media (max-width: 1600px) {
+  // ------------------------
+  @mixin mixBtnInputBorderRadius {
+    border-radius: 4px !important;
+  }
+  @mixin mixBtnInputStyle {
+    height: 30px;
+    padding: 3px 6px;
+    font-size: $fontSize12;
+  }
+  // ------------------------
+  .productMasterForm {
+    
+  }  
+  .productGridViewContainer{     
+    
+  }
+}
+

@@ -1,0 +1,28 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+// ----------------------
+.modalDashboard {
+  .ant-modal-content {
+    border-radius: $borderRadius;
+    overflow: hidden;
+    .ant-modal-close-x {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      display: grid;
+      align-items: center;
+    }
+    .ant-modal-header {
+      height: 55px;
+      display: grid;
+      align-items: center;
+      .ant-modal-title {
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+}
+// ============ responsive ============
+// ============ responsive ============
+@media (max-width: 1600px) {
+}

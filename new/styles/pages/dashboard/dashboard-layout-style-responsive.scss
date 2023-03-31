@@ -1,0 +1,69 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+// --------------------
+@media (max-width: 1600px) {
+  $wrapperBorderRadius: 15px;
+  .dashboardLayout {
+    font-size: 14px;
+    .dashboardMainWrapper {
+      .dashboardPageTitleRow {
+        h1 {
+          font-size: 20px;
+        }
+      }
+      .dashboardMainContent {
+        .dashboardContentGrid {
+          padding: 15px;
+          border-radius: $wrapperBorderRadius;
+        }
+        .dashboardContentInnerGrid {
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+// --------------
+@media (max-width: 1080px) {
+  .dashboardLayout {
+  }
+}
+@media (max-width: 768px) {
+  .dashboardLayout {
+    .dashboardMainWrapper {
+      margin-left: $toggleMobileNavBarWidth;
+    }
+  }
+}
+@media (max-width: 600px) {
+  $wrapperBorderRadius: 10px;
+  .dashboardLayout {
+    .dashboardMainWrapper {
+      .dashboardPageTitleRow {
+        h1 {
+          font-size: 16px;
+        }
+      }
+      .dashboardMainContent {
+        padding: 10px 15px 15px;
+        .dashboardContentGrid {
+          border-radius: $wrapperBorderRadius;
+        }
+        .dashboardContentInnerGrid {
+          padding: 10px;
+          border-radius: $wrapperBorderRadius;
+        }
+      }
+      .addPropertyGrid {
+        display: grid;
+        gap: 10px;
+      }
+      .fieldTypeGrid {
+        display: grid;
+        gap: 10px;
+        .ant-radio-group {
+          display: grid;
+        }
+      }
+    }
+  }
+}

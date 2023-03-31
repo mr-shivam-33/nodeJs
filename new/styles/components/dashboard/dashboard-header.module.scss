@@ -1,0 +1,90 @@
+@import "@styles/pages/dashboard/dashboard-css-variables.scss";
+// -------------
+.dashboardHeader {
+  // position: sticky;
+  position: relative;
+  top: 0px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  .headerLeft {
+    margin-right: auto;
+  }
+  .headerRight {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .loggedUserGrid {
+      background: $colorPrimary;
+      color: $colorWhite;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 4px;
+      border-radius: $boxBorderRadius;
+      cursor: pointer;
+      .userImg {
+        .antAvatar {
+          background: $colorPrimaryLight;
+          border-radius: $boxBorderRadius;
+          width: 42px;
+          height: 42px;
+        }
+      }
+      .userName {
+        font-size: $fontSize14;
+        line-height: 18px;
+        font-weight: 500;
+        min-width: 75px;
+        small {
+          display: block;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+// ============ responsive ============
+@media (max-width: 1600px) {
+  $boxBorderRadius: 4px;
+  .dashboardHeader {
+    .headerRight {
+      padding: 10px 0;
+      .loggedUserGrid {
+        border-radius: $boxBorderRadius;
+        .userImg {
+          .antAvatar {
+            width: 30px;
+            height: 30px;
+            border-radius: $boxBorderRadius;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .dashboardHeader {
+    padding: 0 15px;
+    $boxBorderRadius: 4px;
+    .headerRight {
+      padding: 10px 0;
+      gap: 10px;
+      .loggedUserGrid {
+        padding: 3px 3px;
+        .userImg {
+          .antAvatar {
+            border-radius: $boxBorderRadius;
+            width: 32px;
+            height: 32px;
+          }
+        }
+        .userName {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+@mixin mixSecScrollbar {
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track:hover {
+    background: $colorGray;
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $colorPrimary;
+    border-radius: 15px;
+    opacity: 0.5;
+  }
+  &::-webkit-scrollbar-button {
+    background: $colorPrimary;
+  }
+}
