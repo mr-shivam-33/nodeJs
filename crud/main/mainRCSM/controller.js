@@ -2,6 +2,7 @@ import express from 'express';
 import services from './service.js';
 const UserService = new services();
 // import DB from '../../DB/dbConnection.js';
+var Address6 = require('ip-address').Address6;
 
 let crud = {
     addUser: async(req, res) => {

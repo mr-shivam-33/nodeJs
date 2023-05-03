@@ -5,6 +5,9 @@ import Q from 'q';
 import {user} from './model.js';
 
 class userService {
+
+    
+
     addUser(data) {
         // console.log(data, "ser")
         var deferred = Q.defer();
@@ -21,7 +24,6 @@ class userService {
         });
         return deferred.promise;
     }
-
     
     getUser(email) {
         var deferred = Q.defer();

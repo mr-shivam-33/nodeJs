@@ -1,0 +1,13 @@
+{
+  "appsecret": "medgrids is awesome for world class network for finding health catgory",
+  "privatesecret": "Private Newsfeed crypto api 4 awesome",
+  "host": "http://localhost:9024",
+  "chk_token": "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik5ld3NmZWVkIGNyeXB0byBhcGkgNCBhd2Vzb21lIiwiaWF0IjoxNTE2MjM5MDIyfQ.C7cOCl4RWMX2hk_IalCRWRQC4fWb4kDsnIhm_f2QA2_6yUzEKctmtAbXVAZPCTky",
+  "verifyToken": "eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.iV_TSBgtP7koN-8pHqI1AW_eBKUxiNitWG7Ijl5MXdFSzu_0bIdwA73ZhLLLObFF",
+  "media_path": "/var/www/html/public/uploads/",
+  "theme_path": "/var/www/html/public/theme/",
+  "accountAddress": "0xa4Da98aE358d9936343c35F5BBD12dd5422A8580",
+  "contractAddress": "0x02133B4083EdbE21E1bf48C097dFf6CF9eCb3c0e",
+  "infuraAddress": "https://polygon-mumbai.infura.io/v3/eca916e7c72b4516804a99eb35f39604",
+  "privateKey": "59e380eb28bfebdea3d03b929e545b7ad2e1fb78dcacfee53adc760ce6bebffe"
+}

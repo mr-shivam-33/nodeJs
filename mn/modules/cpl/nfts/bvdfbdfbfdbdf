@@ -1,0 +1,116 @@
+saveNftsDataInChain.aggregate([          
+			{
+				$match: {
+					"$or": [
+						{ "userId":  data.userType },
+						{ "userId":  mongoose.Types.ObjectId(data.userId) }
+					],
+					"data.productId": data.productId.toString()
+				}
+			},
+			{ 
+				"$lookup": {
+					"from": "tbl_save_nfts_pallets",
+					"let": { "ipfsHash": "$ipfsHash", "userId": "$userId", "fdaId": "$fdaId" },
+					"pipeline": [
+						{ 
+							"$match": {
+								"$expr": {
+									"$eq": [ "$$containerIpfs", "$ipfsHash" ],
+									"$eq": [ "$$userId", "$userId" ],
+									"$eq": [ "$$fdaId", "$fdaId" ]
+								}
+							}
+						}    
+					],
+					"as": "nftsPallets"
+				}
+			},
+			{ 
+				"$lookup": {
+					"from": "tbl_save_nfts_masterCartons",
+					"let": { "ipfsHash": "$ipfsHash", "userId": "$userId", "fdaId": "$fdaId" },
+					"pipeline": [
+						{ 
+							"$match": {
+								"$expr": {
+									"$eq": [ "$$palletIpfs", "$ipfsHash" ],
+									"$eq": [ "$$userId", "$userId" ],
+									"$eq": [ "$$fdaId", "$fdaId" ]
+								}
+							}
+						}    
+					],
+					"as": "nftsMasterCartons"
+				}
+			},
+			{ 
+				"$lookup": {
+					"from": "tbl_save_nfts_InnerCartons",
+					"let": { "ipfsHash": "$ipfsHash", "userId": "$userId", "fdaId": "$fdaId" },
+					"pipeline": [
+						{ 
+							"$match": {
+								"$expr": {
+									"$eq": [ "$$masterCartoonsIpfs", "$ipfsHash" ],
+									"$eq": [ "$$userId", "$userId" ],
+									"$eq": [ "$$fdaId", "$fdaId" ]
+								}
+							}
+						}    
+					],
+					"as": "nftsMasterCartons"
+				}
+			},
+			{ 
+				"$lookup": {
+					"from": "tbl_save_nfts_Drugs",
+					"let": { "ipfsHash": "$ipfsHash", "userId": "$userId", "fdaId": "$fdaId" },
+					"pipeline": [
+						{ 
+							"$match": {
+								"$expr": {
+									"$eq": [ "$$innerCartonsIpfs", "$ipfsHash" ],
+									"$eq": [ "$$userId", "$userId" ],
+									"$eq": [ "$$fdaId", "$fdaId" ]
+								}
+							}
+						}    
+					],
+					"as": "nftsMasterCartons"
+				}
+			},
+		]).exec(async (err, result) => {
+			
+			if (err) {
+				let obj = {"status":0,"data":err}
+				deferred.resolve(obj)
+			} else {
+				
+				// var containersPushData = []
+				// var palletsPushData = []
+				// var mastersCartonsPushData = []
+				// var innerCartonsPushData = []
+				// var drugsPushData = []
+				// result.filter((item)=>{					
+					// if(item.data.type = "containers"){						
+						// containersPushData.push(item)						
+					// } else if(item.data.type = "pallets"){
+						// palletsPushData.push(item)
+					// } else if(item.data.type = "mastersCartons"){
+						// mastersCartonsPushData.push(item)
+					// } else if(item.data.type = "innerCartons"){
+						// innerCartonsPushData.push(item)
+					// } else {
+						// drugsPushData.push(item)
+					// }
+				// });
+				
+				// let obj = {"status":1,"data":{"containers": containersPushData, "pallets": palletsPushData, "mastersCartons": mastersCartonsPushData, "innerCartons": innerCartonsPushData, "drugs": drugsPushData}}
+				let obj = {"status":1,"data":result}
+				deferred.resolve(obj)
+				
+			}
+		});
+		
+		return deferred.promise;
